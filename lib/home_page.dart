@@ -9,13 +9,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String titulo = 'ALMA DE CRISTO';
   TextPage textPage = TextPage();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Orações: ALAMA DE CRISTO'),
+          title: Text(
+            'Orações: $titulo',
+            style: TextStyle(color: Colors.amber[100]),
+          ),
+          backgroundColor: Colors.black,
         ),
         body: Container(
           padding: const EdgeInsets.all(20),
@@ -29,16 +34,13 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      textPage.tituloDaOracao('ALAMA DE CRISTO'),
-                      textPage.autorDaOracao('Santo Inácio de Loyola'),
-                    ],
-                  ),
-                ],
+              Center(
+                child: Column(
+                  children: [
+                    textPage.tituloDaOracao(titulo),
+                    textPage.autorDaOracao('Santo Inácio de Loyola'),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 16,
@@ -71,11 +73,26 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 16,
               ),
-              Center(child: textPage.tituloEmLatim('Titulo em Latim')),
+              Center(child: textPage.tituloEmLatim('ANIMA CHRISTI')),
               const SizedBox(
                 height: 16,
               ),
-              textPage.textoEmLatim('Texto'),
+              textPage.textoEmLatim('''
+                Anima Christi, sanctica me.
+                Corpus Christi, salve me.
+                Sanguis Christi, inebria me.
+                Aqua lateris Christi, lava me.
+                Passio Christi, conforta me.
+                O bone Iesu, exaudi me.
+                Intra tua vulnera absconde me. 
+                Ne permittas me separari a te.
+                Ab hoste maligno defende me.
+                In hora mortis meae voca me.
+                Et iube me venire ad te,
+                ut cum Sancti tuis laudem te 
+                in saecula saeculorum.
+                Amem.
+                '''),
             ],
           ),
         ),

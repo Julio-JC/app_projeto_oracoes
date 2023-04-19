@@ -9,7 +9,7 @@ class TextPage {
       style: const TextStyle(
         fontFamily: 'Playfair_Display',
         fontSize: 16,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.bold,
       ),
     );
     return textWidget;
@@ -31,8 +31,8 @@ class TextPage {
       texto,
       style: const TextStyle(
         fontFamily: 'Playfair_Display',
+        fontWeight: FontWeight.w600,
       ),
-      maxLines: null,
     );
     return textWidget;
   }
@@ -54,6 +54,7 @@ class TextPage {
       texto,
       style: const TextStyle(
         fontFamily: 'Playfair_Display',
+        fontWeight: FontWeight.w600,
       ),
     );
     return textWidget;
