@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String titulo = 'ALMA DE CRISTO';
+  String title = 'ALMA DE CRISTO';
   TextPage textPage = TextPage();
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Orações: $titulo',
+            'Orações: $title',
             style: TextStyle(color: Colors.amber[100]),
           ),
           backgroundColor: Colors.black,
@@ -26,8 +26,9 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(20),
           decoration: const BoxDecoration(
             image: DecorationImage(
+                opacity: 0.6,
                 image: AssetImage(
-                  'assets/images/13efe262f6894edb7db3b215b2ad3a76.jpg',
+                  'assets/images/wallpaper.jpg',
                 ),
                 fit: BoxFit.cover),
           ),
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               Center(
                 child: Column(
                   children: [
-                    textPage.tituloDaOracao(titulo),
+                    textPage.tituloDaOracao(title),
                     textPage.autorDaOracao('Santo Inácio de Loyola'),
                   ],
                 ),
