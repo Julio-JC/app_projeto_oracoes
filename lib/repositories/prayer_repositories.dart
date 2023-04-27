@@ -21,6 +21,7 @@ class PrayerRepository {
                 por todos os séculos dos séculos.
                 Amém.
                 ''',
+      inLatim: '(em latim)',
       latimTitle: 'ANIMA CHRISTI',
       latimText: '''
                 Anima Christi, sanctica me.
@@ -59,6 +60,7 @@ class PrayerRepository {
                 em Vosso amor para sempre
                 Amém.
                 ''',
+      inLatim: '',
       latimTitle: '',
       latimText: '''
                 
@@ -70,6 +72,7 @@ class PrayerRepository {
       prayerText: '''
                 
                 ''',
+      inLatim: '',
       latimTitle: '',
       latimText: '''
                 
@@ -81,6 +84,7 @@ class PrayerRepository {
       prayerText: '''
                 
                 ''',
+      inLatim: '',
       latimTitle: '',
       latimText: '''
                 
@@ -92,6 +96,7 @@ class PrayerRepository {
       prayerText: '''
                 
                 ''',
+      inLatim: '',
       latimTitle: '',
       latimText: '''
                 

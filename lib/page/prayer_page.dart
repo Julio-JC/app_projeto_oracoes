@@ -63,9 +63,9 @@ class PrayerPage extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const Text(
-                '(em latim)',
-                style: TextStyle(
+              Text(
+                prayer.inLatim,
+                style: const TextStyle(
                   color: Colors.red,
                 ),
               ),

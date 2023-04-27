@@ -43,7 +43,14 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, indexPrayer) {
                 return ListTile(
                   leading: const Icon(Icons.church),
-                  title: Text(prayer[indexPrayer].prayerTitle),
+                  title: Text(
+                    prayer[indexPrayer].prayerTitle,
+                    style: const TextStyle(
+                      fontFamily: 'Playfair_Display',
+                      fontWeight: FontWeight.w500,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
                   onTap: () => goPrayer(prayer[indexPrayer]),
                 );
               },
