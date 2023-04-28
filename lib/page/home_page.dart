@@ -1,12 +1,17 @@
+import 'package:app_projeto_oracoes/global/string_constants.dart';
 import 'package:app_projeto_oracoes/page/prayer_page.dart';
 import 'package:app_projeto_oracoes/repositories/prayer_repositories.dart';
 import 'package:flutter/material.dart';
-
 import '../models/prayer.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     goPrayer(Prayer prayer) {
@@ -24,7 +29,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            'Orações',
+            StringConstants.titleAppBar,
             style: TextStyle(color: Colors.amber[100]),
           ),
           backgroundColor: Colors.black,
@@ -51,7 +56,9 @@ class HomePage extends StatelessWidget {
                       fontStyle: FontStyle.italic,
                     ),
                   ),
-                  onTap: () => goPrayer(prayer[indexPrayer]),
+                  onTap: () {
+                    return goPrayer(prayer[indexPrayer]);
+                  },
                 );
               },
               padding: const EdgeInsets.all(10),

@@ -1,3 +1,4 @@
+import 'package:app_projeto_oracoes/global/string_constants.dart';
 import 'package:app_projeto_oracoes/models/prayer.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,11 @@ class PrayerPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Orações: ${prayer.prayerTitle} ',
-            style: TextStyle(color: Colors.amber[100]),
+            '${StringConstants.titleAppBarPrayer}: ${prayer.prayerTitle} ',
+            style: TextStyle(
+              color: Colors.amber[100],
+              fontSize: 18,
+            ),
           ),
           backgroundColor: Colors.black,
         ),
