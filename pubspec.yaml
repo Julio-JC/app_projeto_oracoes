@@ -45,7 +45,7 @@ flutter_native_splash:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: assets/images/image-icon.png
+  image_path: assets/images/logo.png
   min_sdk_android: 21  
   
 dev_dependencies:
