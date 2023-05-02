@@ -19,6 +19,21 @@ class PrayerPage extends StatelessWidget {
             ),
           ),
           backgroundColor: Colors.black,
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {},
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: const [
+                  Text('A'),
+                  Text(
+                    'A',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
         body: Container(
           padding: const EdgeInsets.all(20),

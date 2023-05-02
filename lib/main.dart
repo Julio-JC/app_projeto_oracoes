@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'global/string_constants.dart';
 import 'page/home_page.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Orações',
+      title: StringConstants.titleAppBar,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
