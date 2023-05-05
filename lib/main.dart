@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'global/string_constants.dart';
+import 'global/constants.dart';
 import 'page/home_page.dart';
 import 'package:flutter/services.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: StringConstants.titleAppBar,
+      title: Constants.titleAppBar,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

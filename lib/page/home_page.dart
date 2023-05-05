@@ -1,8 +1,9 @@
-import 'package:app_projeto_oracoes/global/string_constants.dart';
+import 'package:app_projeto_oracoes/global/constants.dart';
 import 'package:app_projeto_oracoes/page/prayer_page.dart';
 import 'package:app_projeto_oracoes/repositories/prayer_repositories.dart';
 import 'package:flutter/material.dart';
 import '../models/prayer.dart';
+import 'custom_page_route.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,8 +18,8 @@ class _HomePageState extends State<HomePage> {
     goPrayer(Prayer prayer) {
       Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (_) => PrayerPage(prayer: prayer),
+        CustomPageRoute(
+          child: PrayerPage(prayer: prayer),
         ),
       );
     }
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            StringConstants.titleAppBar,
+            Constants.titleAppBar,
             style: TextStyle(color: Colors.amber[100]),
           ),
           backgroundColor: Colors.black,

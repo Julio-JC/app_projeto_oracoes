@@ -1,4 +1,4 @@
-import 'package:app_projeto_oracoes/global/string_constants.dart';
+import 'package:app_projeto_oracoes/global/constants.dart';
 import 'package:app_projeto_oracoes/models/prayer.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,8 @@ class PrayerPage extends StatefulWidget {
 }
 
 class _PrayerPageState extends State<PrayerPage> {
-  double textSize = 14.0;
+  double textSize = Constants.textSize;
+  double titleSize = Constants.titleSize;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class _PrayerPageState extends State<PrayerPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            '${StringConstants.titleAppBarPrayer}: ${widget.prayer.prayerTitle}',
+            '${Constants.titleAppBarPrayer}: ${widget.prayer.prayerTitle}',
             style: TextStyle(
               color: Colors.amber[100],
               fontSize: 18,
@@ -35,11 +36,19 @@ class _PrayerPageState extends State<PrayerPage> {
                 padding: const EdgeInsets.only(right: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    Text('A'),
+                  children: [
                     Text(
                       'A',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                        color: Colors.amber[100],
+                      ),
+                    ),
+                    Text(
+                      'A',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.amber[100],
+                      ),
                     ),
                   ],
                 ),
@@ -66,9 +75,9 @@ class _PrayerPageState extends State<PrayerPage> {
                     children: [
                       Text(
                         widget.prayer.prayerTitle,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontFamily: 'Playfair_Display',
-                          fontSize: 16,
+                          fontSize: titleSize,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -99,8 +108,9 @@ class _PrayerPageState extends State<PrayerPage> {
                 ),
                 Text(
                   widget.prayer.inLatim,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.red,
+                    fontSize: textSize,
                   ),
                 ),
                 const SizedBox(
@@ -109,9 +119,9 @@ class _PrayerPageState extends State<PrayerPage> {
                 Center(
                   child: Text(
                     widget.prayer.latimTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'Playfair_Display',
-                      fontSize: 16,
+                      fontSize: titleSize,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
@@ -121,9 +131,9 @@ class _PrayerPageState extends State<PrayerPage> {
                 ),
                 Text(
                   widget.prayer.latimText,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'Playfair_Display',
-                    fontSize: 14,
+                    fontSize: textSize,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -148,23 +158,31 @@ class _PrayerPageState extends State<PrayerPage> {
                 'A',
                 style: TextStyle(fontSize: 18),
               ),
-              Slider(
-                activeColor: Colors.amber,
-                inactiveColor: Colors.grey,
-                onChanged: (double newSize) {
-                  setState(() {
-                    textSize = newSize;
-                  });
-                  print(textSize);
+              StatefulBuilder(
+                builder: (context, state) {
+                  return Slider(
+                    activeColor: Colors.orange[200],
+                    inactiveColor: Colors.grey[300],
+                    value: textSize,
+                    onChanged: (double newSize) {
+                      state(() {});
+                      setState(() {
+                        textSize = newSize;
+                        titleSize = newSize;
+                      });
+                    },
+                    min: 10.0,
+                    max: 20.0,
+                  );
                 },
-                value: textSize,
-                min: 10.0,
-                max: 25.0,
               ),
-              const Text('A'),
               const Text(
                 'A',
                 style: TextStyle(fontSize: 18),
+              ),
+              const Text(
+                'A',
+                style: TextStyle(fontSize: 23),
               ),
             ],
           )
