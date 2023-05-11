@@ -67,10 +67,20 @@ class PrayerRepository {
                 ''',
     ),
     Prayer(
-      prayerTitle: 'ORAÇÃO 3',
-      prayerAuthor: '',
+      prayerTitle: 'PAI NOSSO',
+      prayerAuthor: 'Jesus de Nazaré',
       prayerText: '''
-                
+                Pai nosso que estás nos céus, santificado
+                seja o teu nome;
+                Venha o teu reino, seja feita a tua vontade,
+                assim na terra
+                como no céu;
+                O pão nosso de cada dia nos dá hoje;
+                E perdoa-nos as nossas dívidas, assim como
+                nós também temos
+                perdoado aos nossos devedores;
+                E não nos deixes entrar em tentação; 
+                mas livra-nos do mal.
                 ''',
       inLatim: '',
       latimTitle: '',
@@ -79,15 +89,46 @@ class PrayerRepository {
                 ''',
     ),
     Prayer(
-      prayerTitle: 'ORAÇÃO 4 ',
-      prayerAuthor: '',
+      prayerTitle: 'ORAÇÃO DA PAZ',
+      prayerAuthor: 'São Francisco de Assis',
       prayerText: '''
-                
+                Senhor, fazei de mim um instrumento
+                da Vossa paz.
+                Onde houver ódio, que eu leve o amor.
+                Onde houver ofensa, que eu leve o perdão.
+                Onde houver discórdia, que eu leve a união.
+                Onde houver dúvidas, que eu leve a fé.
+                Onde houver erro, que eu leve a verdade.
+                Onde houver desespero, que eu leve a esperança.
+                Onde houver tristeza, que eu leve a alegria.
+                Onde houver trevas, que eu leve a luz.
+                Ó Mestre, fazei que eu procure mais:
+                consolar, que ser consolado;
+                compreender, que ser compreendido;
+                amar, que ser amado.
+                Pois é dando que se recebe.
+                É perdoando que se é perdoado.
+                E é morrendo que se vive para a vida eterna.
                 ''',
-      inLatim: '',
-      latimTitle: '',
+      inLatim: '(em latim)',
+      latimTitle: 'PAX ORANDI',
       latimText: '''
-                
+                Domine fac me vas pacis tuae.
+                Ubi odit, amet veniam.
+                Ubi verba offensa sunt, veniam afferam.
+                Ubi est discordia, unitatem afferam.
+                Ubi dubia sunt, fidem mihi tribuam.
+                Error sit, assumenda veritatis.
+                Ubi desperatio est, spem adducam.
+                Ubi tristitia est, ego gaudium capiam.
+                Ubi tenebrae sunt, faciam lucem.
+                Domine, fac me amplius quaerere;
+                consolari, quam consolari;
+                intelligere, intelligi;
+                amare, to be loved.
+                Id dando accipimus.
+                Dimittendo, ut dimittitur.
+                Et moriendo vivit ad vitam aeternam.
                 ''',
     ),
     Prayer(

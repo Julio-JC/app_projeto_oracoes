@@ -11,8 +11,8 @@ class PrayerPage extends StatefulWidget {
 }
 
 class _PrayerPageState extends State<PrayerPage> {
-  double textSize = Constants.textSize;
-  double titleSize = Constants.titleSize;
+  ValueNotifier<double> textSize = ValueNotifier<double>(Constants.textSize);
+  ValueNotifier<double> titleSize = ValueNotifier<double>(Constants.titleSize);
 
   @override
   Widget build(BuildContext context) {
@@ -73,68 +73,86 @@ class _PrayerPageState extends State<PrayerPage> {
                 Center(
                   child: Column(
                     children: [
-                      Text(
-                        widget.prayer.prayerTitle,
-                        style: TextStyle(
-                          fontFamily: 'Playfair_Display',
-                          fontSize: titleSize,
-                          fontWeight: FontWeight.bold,
+                      ValueListenableBuilder(
+                        valueListenable: titleSize,
+                        builder: (_, value, __) => Text(
+                          widget.prayer.prayerTitle,
+                          style: TextStyle(
+                            fontFamily: 'Playfair_Display',
+                            fontSize: titleSize.value,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                      Text(
-                        widget.prayer.prayerAuthor,
-                        style: TextStyle(
-                          fontFamily: 'Playfair_Display',
-                          fontSize: textSize,
-                          color: Colors.red[800],
+                      ValueListenableBuilder(
+                        valueListenable: titleSize,
+                        builder: (_, value, __) => Text(
+                          widget.prayer.prayerAuthor,
+                          style: TextStyle(
+                            fontFamily: 'Playfair_Display',
+                            fontSize: textSize.value,
+                            color: Colors.red[800],
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                Text(
-                  widget.prayer.prayerText,
-                  style: TextStyle(
-                    fontFamily: 'Playfair_Display',
-                    fontSize: textSize,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Text(
-                  widget.prayer.inLatim,
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: textSize,
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Center(
-                  child: Text(
-                    widget.prayer.latimTitle,
+                ValueListenableBuilder(
+                  valueListenable: titleSize,
+                  builder: (_, value, __) => Text(
+                    widget.prayer.prayerText,
                     style: TextStyle(
                       fontFamily: 'Playfair_Display',
-                      fontSize: titleSize,
-                      fontWeight: FontWeight.w800,
+                      fontSize: textSize.value,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                Text(
-                  widget.prayer.latimText,
-                  style: TextStyle(
-                    fontFamily: 'Playfair_Display',
-                    fontSize: textSize,
-                    fontWeight: FontWeight.w600,
+                ValueListenableBuilder(
+                  valueListenable: titleSize,
+                  builder: (_, value, __) => Text(
+                    widget.prayer.inLatim,
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: textSize.value,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Center(
+                  child: ValueListenableBuilder(
+                    valueListenable: titleSize,
+                    builder: (_, value, __) => Text(
+                      widget.prayer.latimTitle,
+                      style: TextStyle(
+                        fontFamily: 'Playfair_Display',
+                        fontSize: titleSize.value,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                ValueListenableBuilder(
+                  valueListenable: titleSize,
+                  builder: (_, value, __) => Text(
+                    widget.prayer.latimText,
+                    style: TextStyle(
+                      fontFamily: 'Playfair_Display',
+                      fontSize: textSize.value,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ],
@@ -163,13 +181,12 @@ class _PrayerPageState extends State<PrayerPage> {
                   return Slider(
                     activeColor: Colors.orange[200],
                     inactiveColor: Colors.grey[300],
-                    value: textSize,
+                    value: textSize.value,
                     onChanged: (double newSize) {
                       state(() {});
-                      setState(() {
-                        textSize = newSize;
-                        titleSize = newSize;
-                      });
+
+                      textSize.value = newSize;
+                      titleSize.value = newSize;
                     },
                     min: 10.0,
                     max: 20.0,
