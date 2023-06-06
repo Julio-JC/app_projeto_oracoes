@@ -4,4 +4,5 @@ class Constants {
 
   static const double textSize = 14.0;
   static const double titleSize = 16.0;
+  static const double textsSizeAppBar = 18.0;
 }
