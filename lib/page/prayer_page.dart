@@ -1,3 +1,4 @@
+import 'package:app_projeto_oracoes/componets/text/custom_text_component.dart';
 import 'package:app_projeto_oracoes/global/constants.dart';
 import 'package:app_projeto_oracoes/models/prayer.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,6 @@ class _PrayerPageState extends State<PrayerPage> {
           actions: <Widget>[
             TextButton(
               onPressed: () {
-                // sizedLitte();
                 setState(() {
                   showSlider = !showSlider;
                 });
@@ -78,29 +78,20 @@ class _PrayerPageState extends State<PrayerPage> {
                   Center(
                     child: Column(
                       children: [
-                        ValueListenableBuilder(
-                          valueListenable: titleSize,
-                          builder: (_, value, __) => Text(
-                            widget.prayer.prayerTitle,
-                            style: TextStyle(
-                              fontFamily: 'Playfair_Display',
-                              fontSize: titleSize.value,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
+                        CustomTextComponent(
+                          text: widget.prayer.prayerTitle,
+                          textSize: titleSize,
+                          fontFamily: 'Playfair_Display',
+                          fontWeight: FontWeight.bold,
+                          textAlign: TextAlign.center,
                         ),
-                        ValueListenableBuilder(
-                          valueListenable: titleSize,
-                          builder: (_, value, __) => Text(
-                            widget.prayer.prayerAuthor,
-                            style: TextStyle(
-                              fontFamily: 'Playfair_Display',
-                              fontSize: textSize.value,
-                              color: Colors.red[800],
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
+                        CustomTextComponent(
+                          text: widget.prayer.prayerAuthor,
+                          textSize: textSize,
+                          fontFamily: 'Playfair_Display',
+                          color: Colors.red[800],
+                          fontWeight: FontWeight.bold,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -108,62 +99,43 @@ class _PrayerPageState extends State<PrayerPage> {
                   const SizedBox(
                     height: 16,
                   ),
-                  ValueListenableBuilder(
-                    valueListenable: titleSize,
-                    builder: (_, value, __) => Text(
-                      widget.prayer.prayerText,
-                      style: TextStyle(
-                        fontFamily: 'Playfair_Display',
-                        fontSize: textSize.value,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      textAlign: TextAlign.justify,
-                    ),
+                  CustomTextComponent(
+                    text: widget.prayer.prayerText,
+                    textSize: textSize,
+                    fontFamily: 'Playfair_Display',
+                    fontWeight: FontWeight.w600,
+                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  ValueListenableBuilder(
-                    valueListenable: titleSize,
-                    builder: (_, value, __) => Text(
-                      widget.prayer.inLatim,
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: textSize.value,
-                      ),
-                    ),
+                  CustomTextComponent(
+                    text: widget.prayer.inLatim,
+                    textSize: textSize,
+                    color: Colors.red,
+                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   Center(
-                    child: ValueListenableBuilder(
-                      valueListenable: titleSize,
-                      builder: (_, value, __) => Text(
-                        widget.prayer.latimTitle,
-                        style: TextStyle(
-                          fontFamily: 'Playfair_Display',
-                          fontSize: titleSize.value,
-                          fontWeight: FontWeight.w800,
-                        ),
-                        textAlign: TextAlign.justify,
-                      ),
+                    child: CustomTextComponent(
+                      text: widget.prayer.latimTitle,
+                      textSize: titleSize,
+                      fontFamily: 'Playfair_Display',
+                      fontWeight: FontWeight.w800,
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  ValueListenableBuilder(
-                    valueListenable: titleSize,
-                    builder: (_, value, __) => Text(
-                      widget.prayer.latimText,
-                      style: TextStyle(
-                        fontFamily: 'Playfair_Display',
-                        fontSize: textSize.value,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      textAlign: TextAlign.justify,
-                    ),
+                  CustomTextComponent(
+                    text: widget.prayer.latimText,
+                    textSize: textSize,
+                    fontFamily: 'Playfair_Display',
+                    fontWeight: FontWeight.w600,
+                    textAlign: TextAlign.justify,
                   ),
                 ],
               ),
@@ -196,49 +168,4 @@ class _PrayerPageState extends State<PrayerPage> {
       ),
     );
   }
-
-  // void sizedLitte() {
-  //   showDialog(
-  //     context: context,
-  //     builder: (context) => AlertDialog(
-  //       actions: [
-  //         Row(
-  //           mainAxisAlignment: MainAxisAlignment.center,
-  //           children: [
-  //             const Text('A'),
-  //             const Text(
-  //               'A',
-  //               style: TextStyle(fontSize: 18),
-  //             ),
-  //             StatefulBuilder(
-  //               builder: (context, state) {
-  //                 return Slider(
-  //                   activeColor: Colors.orange[200],
-  //                   inactiveColor: Colors.grey[300],
-  //                   value: textSize.value,
-  //                   onChanged: (double newSize) {
-  //                     state(() {});
-
-  //                     textSize.value = newSize;
-  //                     titleSize.value = newSize;
-  //                   },
-  //                   min: 10.0,
-  //                   max: 20.0,
-  //                 );
-  //               },
-  //             ),
-  //             const Text(
-  //               'A',
-  //               style: TextStyle(fontSize: 18),
-  //             ),
-  //             const Text(
-  //               'A',
-  //               style: TextStyle(fontSize: 23),
-  //             ),
-  //           ],
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
 }
